@@ -36,12 +36,17 @@ interface IProps {
 export function RoomMemberTileView(props: IProps): JSX.Element {
     const vm = useMemberTileViewModel(props);
     const member = vm.member;
+    let title = member.displayUserId;
+    if (member.user?.presenceStatusMsg) {
+        title = title ? `${title}\n${member.user.presenceStatusMsg}` : member.user.presenceStatusMsg;
+    }
+
     const av = (
         <BaseAvatar
             size="32px"
             name={member.name}
             idName={member.userId}
-            title={member.displayUserId}
+            title={title}
             url={member.avatarThumbnailUrl}
             altText={_t("common|user_avatar")}
         />

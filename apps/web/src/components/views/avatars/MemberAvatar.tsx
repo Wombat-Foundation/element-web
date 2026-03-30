@@ -74,6 +74,10 @@ export default function MemberAvatar({
                     roomId: member?.roomId ?? "",
                 }) ?? fallbackUserId;
         }
+
+        if (member.user?.presenceStatusMsg) {
+            title = title ? `${title}\n${member.user.presenceStatusMsg}` : member.user.presenceStatusMsg;
+        }
     }
 
     return (

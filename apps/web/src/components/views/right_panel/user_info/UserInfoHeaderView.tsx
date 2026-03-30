@@ -74,6 +74,9 @@ export const UserInfoHeaderView: React.FC<UserInfoHeaderViewProps> = ({
                         </Flex>
                     </Heading>
                     {presenceLabel}
+                    {vm.precenseInfo.statusMessage && (
+                        <div className="mx_UserInfo_statusMessage">{vm.precenseInfo.statusMessage}</div>
+                    )}
                     {vm.timezoneInfo && (
                         <Tooltip label={vm.timezoneInfo?.timezone ?? ""}>
                             <Flex align="center" className="mx_UserInfo_timezone">
