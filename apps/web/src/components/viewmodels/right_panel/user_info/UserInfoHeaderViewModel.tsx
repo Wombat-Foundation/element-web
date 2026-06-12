@@ -99,6 +99,7 @@ export function useUserfoHeaderViewModel({ member, roomId }: UserInfoHeaderViewM
         precenseInfo.state = member.user.presence;
         precenseInfo.lastActiveAgo = member.user.lastActiveAgo;
         precenseInfo.currentlyActive = member.user.currentlyActive;
+        precenseInfo.statusMessage = member.user.presenceStatusMsg;
     }
 
     if (enablePresenceByHsUrl && enablePresenceByHsUrl[cli.baseUrl] !== undefined) {
